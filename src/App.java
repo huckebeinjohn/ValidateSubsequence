@@ -10,6 +10,7 @@ public class App {
 
         
         System.out.println(isValidSubsequence(testingArray1, testingSequence1)); 
+        System.out.println(isVaildSubsequence2(testingArray1, testingSequence1));
 
     }
 
@@ -29,7 +30,28 @@ public class App {
         if(seqIndex == sequence.size()){
             result = true; 
         }
-        System.out.println("system testing, result=" + result);
+        System.out.println("isVaildSubsequence() system testing, result=" + result);
         return result;
+    }
+
+    public static boolean isVaildSubsequence2(List<Integer> array, List<Integer> sequence){
+        System.out.println("isVaildSubsequence2() TESTING START");
+        boolean result = false;
+        int seqIndex = 0;
+        for(var num : array){
+            if(seqIndex == sequence.size()){
+                System.out.println("got here");
+                break;
+            }
+            if(sequence.get(seqIndex).equals(num)){
+                System.out.println("Matched number: "+sequence.get(seqIndex));
+                seqIndex++;
+            }
+        }
+        if(seqIndex == sequence.size()){
+                result = true;
+        }
+        System.out.println("isVaildSubsequence2() system testing, result="+result);
+        return result; 
     }
 }
