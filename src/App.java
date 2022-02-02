@@ -16,6 +16,7 @@ public class App {
     public static boolean isValidSubsequence(List<Integer> array, List<Integer> sequence){
         int arrIndex = 0;
         int seqIndex = 0;
+        boolean result = false;
 
         while(arrIndex<array.size() && seqIndex<sequence.size()){
             if(array.get(arrIndex).equals(sequence.get(seqIndex))){
@@ -24,6 +25,11 @@ public class App {
             arrIndex++;
         }
         System.out.println("Sequence matching rate: "+seqIndex + "/" +sequence.size());
-        return seqIndex == sequence.size();
+        
+        if(seqIndex == sequence.size()){
+            result = true; 
+        }
+        System.out.println("system testing, result=" + result);
+        return result;
     }
 }
